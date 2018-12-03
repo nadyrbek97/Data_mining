@@ -6,7 +6,7 @@ import pandas as pd
 from pandas import DataFrame
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
-
+from sklearn.ensemble import RandomForestRegressor
 #print(dataframe)
 # #Git rid of the name of the animal
 # #And change the hunter/scavenger to 0/1
@@ -34,7 +34,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 # print(pred)
 class Data(object):
 
-
     @staticmethod
     def data_min(ar):
 
@@ -49,6 +48,9 @@ class Data(object):
         # logReg.fit(X,y)
         pred = logReg.predict(ar)
         # #print('Variance score: %.2f' % r2_score([[43500]],pred))
+        forest_reg = RandomForestRegressor(random_state=55)
+        forest_reg.fit(X, y)
+        pred=forest_reg.predict(ar)
         return pred
 # print(logReg.coef_,"hh")
 

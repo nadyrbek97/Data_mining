@@ -31,8 +31,8 @@ def home_view(request):
         a = []
         a.append(h.rooms)
         a.append(h.seria)
-        a.append(h.heating)
         a.append(h.area)
+        a.append(h.heating)
         a.append(h.floor)
 
         e = []
