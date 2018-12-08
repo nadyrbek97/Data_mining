@@ -3,6 +3,8 @@ from .forms import HomeForm
 from .models import Home
 from .data_test import Data
 from django.contrib import messages
+from rest_framework import generics
+from .serializers import HomeSerializer
 from django.views.generic import CreateView
 from Data_mining.views import home
 from django.http import HttpResponse
@@ -42,6 +44,7 @@ def home_view(request):
         d = Data.data_min(e)
         prediction = int(d[0])
         print(type(d))
+        h.price = prediction
         h.save()
         messages.info(request, f'The Prediction is { prediction }$')
         if next:
@@ -52,3 +55,7 @@ def home_view(request):
     }
     return render(request, 'home_form.html', context)
 
+
+class HomeList(generics.ListCreateAPIView):
+    queryset = Home.objects.all()
+    serializer_class = HomeSerializer

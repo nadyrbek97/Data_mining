@@ -47,17 +47,20 @@
                     </div>
                 {% endfor %}
             {% endif %}
-          {% block content %}{% endblock %}
+          {% block content %}
+              <h2>Welcome to "Flat Price Prediction" in Bishkek <Application></Application></h2>
+              <a href="{% url 'home_view' %}"><button class="btn btn-outline-info" type="submit">Go to prediction</button></a>
+          {% endblock %}
       </div>
         <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <h3>Other Functions</h3>
+            <p class='text-muted'>In Other cities
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <li class="list-group-item list-group-item-light">Bishkek</li>
+                <li class="list-group-item list-group-item-light">Osh</li>
+                <li class="list-group-item list-group-item-light">Issyk-kul</li>
+                <li class="list-group-item list-group-item-light">Almaaty</li>
               </ul>
             </p>
           </div>

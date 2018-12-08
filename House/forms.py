@@ -7,4 +7,4 @@ class HomeForm(forms.ModelForm):
 
     class Meta:
         model = Home
-        fields = '__all__'
+        exclude = ['price']
